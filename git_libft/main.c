@@ -6,11 +6,31 @@
 
 int	main(void)
 {
-	char	*s = "hola que tal";
+	//Pruebas strnstr
+	char *big = ((void*)0);
+	char *little = "Fake";
+	char *ptr1;
+	char *ptr2;
 
+    ptr1 = strnstr(big, little, 3);
+	printf("strnstr: %s\n", ptr1);
+
+	ptr2 = ft_strnstr(big, little, 3);
+	printf("ft_strnstr: %s\n", ptr2);
+
+	// Pruebas strncmp
+	int	w;
+	w = ft_strncmp("ab", "abcdef", 3);
+	printf("%d\n", w);
+	w = strncmp("ab", "abcdef", 3);
+	printf("%d\n", w);
+
+
+	char	*s = "123456t789";
 	//Pruebas strrchr
-	char *rr1 = ft_strrchr(s, 'a');
-	char *rr2 = strrchr(s, 'a');
+
+	char *rr1 = ft_strrchr(s, 't' + 512);
+	char *rr2 = strrchr(s, 't' + 512);
 	if (rr1)
 		printf("ft_strrchr: %s\n", rr1);
 	else
@@ -22,8 +42,8 @@ int	main(void)
 		printf("strrchr: NULL\n");
 
 	//Pruebas strchr
-	char *r1 = ft_strchr(s, 'a');
-	char *r2 = strchr(s, 'a');
+	char *r1 = ft_strchr(s, 't' + 512);
+	char *r2 = strchr(s, 't' + 512);
 	if (r1)
 		printf("ft_strchr: %s\n", r1);
 	else
@@ -38,24 +58,27 @@ int	main(void)
 	int	result2;
 	char	c1;
 	char	c2;
-	char	dst[15];
+	char	dst[1];
 
 	//Pruebas strlcpy
-	result1 = (int)ft_strlcpy(dst, "1234", 5);
-	printf("%d\n", result1);
-	printf("%s\n", dst);
-	result2 = (int)strlcpy(dst, "1234", 5);
-	printf("%d\n", result2);
-	printf("%s\n", dst);
+	result1 = (int)ft_strlcpy(dst, "A", -1);
+	printf("ft_strlcpy: %d\n", result1);
+	printf("ft_strlcpy: %s\n", dst);
+	result2 = (int)strlcpy(dst, "A", -1);
+	printf("strlcpy: %d\n", result2);
+	printf("strlcpy: %s\n", dst);
 
 	//Pruebas strlcat
-	result1 = (int)ft_strlcat(dst, "56789", 15);
-	printf("%d\n", result1);
-	printf("%s\n", dst);
-	(int)ft_strlcpy(dst, "1234", 5);
-	result2 = (int)strlcat(dst, "56789", 15);
-	printf("%d\n", result2);
-	printf("%s\n", dst);
+	//TEST PACO
+	char *str = "the cake is a lie !\0I'm hidden lol\r\n";
+ 	char buff1[0xF00] = "";
+ 	char buff2[0xF00] = "";
+ 	size_t max = strlen("the cake is a lie !\0I'm hidden lol\r\n") + 1;
+ 
+ 	strlcat(buff1, str, -1);
+ 	ft_strlcat(buff2, str, -1);
+	printf("paco strlcat: %s\n", buff1);
+	printf("paco ft_strlcat: %s\n", buff2);
 
 	//Pruebas isprint
 	result1 = isprint('3');
@@ -64,10 +87,10 @@ int	main(void)
 	printf("%d\n", result2);
 
 	//Pruebas isascii
-	result1 = isascii('q');
-	result2 = ft_isascii('q');
-	printf("%d\n", result1);
-	printf("%d\n", result2);
+	result1 = isascii(0);
+	result2 = ft_isascii(0);
+	printf("ft_isascii:%d\n", result1);
+	printf("isascii:%d\n", result2);
 
 	//Pruebas isalnum
 	result1 = isalnum('a');
