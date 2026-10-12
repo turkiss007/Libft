@@ -4,11 +4,11 @@
 #include <string.h>
 #include <bsd/string.h>
 #include <unistd.h>
+#include <limits.h>
 
 int	main(void)
 {
-	const char s1[] = "-12300";
-
-	printf("%d\n", atoi(s1));
-	printf("%d\n", ft_atoi(s1));
+	char *s1 = "abbcacmy favorite animal is the frogaabcaacb";
+	char *result = ft_strtrim(s1, "");
+	printf("%s\n", result);
 }
