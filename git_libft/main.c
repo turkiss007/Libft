@@ -6,9 +6,16 @@
 #include <unistd.h>
 #include <limits.h>
 
+static char ft_toupper2(unsigned int i, char c)
+{
+	i = 0;
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
+}
+
 int	main(void)
 {
-	char *s1 = "abbcacmy favorite animal is the frogaabcaacb";
-	char *result = ft_strtrim(s1, "");
+	char *result = ft_strmapi("hola", ft_toupper2);
 	printf("%s\n", result);
 }

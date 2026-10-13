@@ -33,7 +33,10 @@ PART1 		= 	ft_isalpha.c \
 
 PART2		=	ft_substr.c \
 				ft_strjoin.c \
-				ft_strtrim.c
+				ft_strtrim.c \
+				ft_split.c \
+				ft_itoa.c \
+				ft_strmapi.c
 
 OBJS		= $(SRCS:.c=.o)
 
