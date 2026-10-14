@@ -6,16 +6,16 @@
 #include <unistd.h>
 #include <limits.h>
 
-static char ft_toupper2(unsigned int i, char c)
-{
-	i = 0;
-	if (c >= 'a' && c <= 'z')
-		c -= 32;
-	return (c);
-}
+//static void ft_toupper2(unsigned int i, char *c)
+//{
+//	i = 0;
+//	if (*c >= 'a' && *c <= 'z')
+//		*c -= 32;
+//	printf("%c", *c);
+//}
 
 int	main(void)
 {
-	char *result = ft_strmapi("hola", ft_toupper2);
-	printf("%s\n", result);
+	t_list *node = ft_lstnew("Hola");
+	printf("%s\n", (char *)node->content);
 }
