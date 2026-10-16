@@ -44,7 +44,9 @@ PART2		=	ft_substr.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c
 
-PART3		=	ft_lstnew.c
+PART3		=	ft_lstnew.c \
+				ft_lstadd_front.c \
+				ft_lstsize.c
 
 OBJS		= $(SRCS:.c=.o)
 
