@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/33863448/README.md)
 *This project has been created as part of the 42 curriculum by mdorado.*
 
 ## Description
