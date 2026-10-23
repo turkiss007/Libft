@@ -42,6 +42,8 @@ static int	alocate_array(char const *s, char c, char **array)
 	{
 		while (s[i] == c)
 			i++;
+		if (s[i] == '\0')
+			break ;
 		start = i;
 		while (i < ft_strlen(s) && s[i] != c)
 			i++;

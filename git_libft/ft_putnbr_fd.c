@@ -14,8 +14,17 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*number;
+	char	digit;
+	long	number;
 
-	number = ft_itoa(n);
-	write(fd, number, ft_strlen(number));
+	number = (long)n;
+	if (number < 0)
+	{
+		number = -number;
+		write(fd, "-", 1);
+	}
+	if (number >= 10)
+		ft_putnbr_fd(number / 10, fd);
+	digit = number % 10 + '0';
+	write(fd, &digit, 1);
 }
